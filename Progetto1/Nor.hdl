@@ -1,0 +1,19 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/01/Nor.hdl
+
+/**
+ * NOR Chip
+ */
+
+CHIP Nor {
+	IN a, b;
+	OUT out;
+
+	PARTS:
+	Nand(a=a, b=a, out=aa);
+	Nand(a=b, b=b, out=bb);
+	Nand(a=aa, b=bb, out=aabb);
+	Nand(a=aabb, b=aabb, out=out);
+}
